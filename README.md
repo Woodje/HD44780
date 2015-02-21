@@ -10,10 +10,10 @@ The following illustrates the setup used in this example.
 |               VS|-> MCUs pin 4 on port C
 |               RW|-> Gnd
 |                E|-> MCUs pin 5 on port C
-|               D0|
-|       LCD     D1|
-|               D2|
-|               D3|
+|               D0|->
+|       LCD     D1|->
+|               D2|->
+|               D3|->
 |               D4|-> MCUs pin 0 on port C
 |               D5|-> MCUs pin 1 on port C
 |               D6|-> MCUs pin 2 on port C
