@@ -2,6 +2,7 @@ HD44780 - 4-bit
 ===============
 The following illustrates the setup used in this example.
  _________________
+|                 |
 |              VSS|-> Gnd
 |              VDD|-> 5V+
 |               V0|-> Middle pin on a Potentiometer
