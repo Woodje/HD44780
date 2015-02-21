@@ -20,3 +20,5 @@ The following illustrates the setup used in this example.
 |                A|-> 5V+ or middle pin on a Potentiometer
 |                K|-> Gnd
 |_________________|
+
+So far tested on: Atmeaga8-16PU
