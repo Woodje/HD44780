@@ -18,9 +18,6 @@ void InitializeLCD()
 	// For the selected DDR, set the first 4 ports to output including the other specific ports also. "Enable pin & RS pin".
 	LCDsControlDatabusDDR |= 1 << 0 | 1 << 1 | 1 << 2 | 1 << 3 | 1 << LCDsEnable | 1 << LCDsRS;
 	
-	// For the selected DDR, set specific ports to output. "Enable pin & RS pin".
-	LCDsControlDatabusDDR |= 1 << LCDsEnable | 1 << LCDsRS;
-	
 	// Give the LCD some time to initialize.
 	_delay_ms(15);
 	
@@ -48,11 +45,11 @@ void InitializeLCD()
 void WriteBitsToLCDsDataLines(uint8_t LCDsRSsState, uint8_t byte)
 {
 	// Write the four low bits to the data lines while having E as high and RS as provided.
-	LCDsControlDatabusPORT = (LCDsRSsState<<LCDsRS) | byte | (1<<LCDsEnable);
+	LCDsControlDatabusPORT = (LCDsRSsState<<LCDsRS) | byte | (1<<LCDsEnable) | LCDsControlDatabusPORT & 0xC0;
 	_delay_ms(1);
 	
 	// Set E to low.
-	LCDsControlDatabusPORT = (LCDsRSsState<<LCDsRS) | byte;
+	LCDsControlDatabusPORT = (LCDsRSsState<<LCDsRS) | byte | LCDsControlDatabusPORT & 0xC0;
 	_delay_ms(1);	
 }
 

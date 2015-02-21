@@ -5,13 +5,15 @@
  *  Author: Woodje
  */
 
+#include <avr/io.h>
+#include <avr/delay.h>
 #include "LCD.h"
 
 int main(void)
 {
 	// Initializing the LCD with the necessary commands before being able to use the LCD.
 	InitializeLCD();
-
+	
 	while(1)
 	{	
 		// Create a custom character.
